@@ -1,0 +1,311 @@
+<div class="row" style="
+right: 0;
+left: 0;
+z-index: 1030;
+background: #f1ee51;
+color:#191919" *ngIf>
+    <div class="col-12 text-center">
+        ENVIO A TODO EL PAIS
+        <span *ngIf>/</span>
+        <span *ngIf></span>
+    </div>
+</div>
+<header class="header header--standard" data-sticky="true" style="    background: #0581bbc4 !important;">
+   
+    <div class="header__left">
+        <a class="ps-logo" [routerLink]="['/']" routerLinkActive="router-link-active">
+        
+            <img src="https://img.freepik.com/vector-gratis/plantilla-diseno-logotipo-tienda-online-diseno-vectorial-bolsa-compras-simbolo-mercado-digital_18099-1191.jpg" alt="" style="width:150px;">
+        </a>
+    </div>
+    <div class="header__right">
+        
+        <div class="header__navigation">
+            <ul class="menu">
+                <li><a class="text-white" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"></a></li>
+                <li class="menu-item-has-children">
+                      <a class="text-white" style="cursor: pointer;" [routerLink]="['/productos']" >
+                          {{ 'menu.item_dos'
+                      </a>
+                    <span class="sub-toggle"></span>
+                    <ul class="sub-menu">
+                        <li *ngFor>
+                            <a style="cursor: pointer;"  [routerLink]="['/productos/categoria/']"></a>
+                        </li>
+  
+                    </ul>
+                </li>
+                <li class="menu-item-has-children"><a style="cursor: pointer;" class="text-white"></a><span class="sub-toggle"></span>
+                  <ul class="sub-menu">
+                      <li>
+                          <a [routerLink]="['/nosotros']"></a>
+                          <a [routerLink]="['/impacto-social']"></a>
+                          <a [routerLink]="['/embajadoras']" ></a>
+                      </li>
+                  </ul>
+              </li>
+                <li><a class="text-white" [routerLink]="['/contacto']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'menu.item_cuatro' </a></li>
+            </ul>
+        </div>
+        <div class="header__container">
+          <div class="header__search">
+              <form class="ps-form--header-search" >
+                  <input id="input_search" class="form-control" type="text">
+                  <button type="button"  class="text-white"><i  class="icon-magnifier"></i></button>
+              </form>
+              <a class="header__search-mini" href="#"><i class="icon-magnifier"></i></a>
+          </div>
+            <div class="header__actions">
+                  <ng-container *ngIf>
+                      <a class="header__user text-white" [routerLink]="['/cuenta/perfil']"><i class="icon-user"></i></a>
+                      
+                  </ng-container>
+                  <ng-container *ngIf>
+                      <a class="header__user text-white" [routerLink]="['/login']"><i class="icon-user"></i>
+                        </a>
+                  </ng-container>
+  
+                  <ng-container *ngIf=>
+                      <a class="header__cart ps-toggle--sidebar">
+                          <i class="icon-cart text-white"></i><span  style="background: #f1ee51;color:black"></span>
+                      </a>
+                  </ng-container>
+                  <ng-container *ngIf>
+                      <a class="header__cart ps-toggle--sidebar" >
+                          <i class="icon-cart text-white"></i><span  style="background: #f1ee51;color:black"></span>
+                      </a>
+                  </ng-container>
+  
+                
+                <a class="header__menu-toggle ps-toggle--sidebar text-white" style="cursor: pointer;"><i class="icon-menu"></i></a>
+            </div>
+        </div>
+    </div>
+</header>
+<header class="header header--mobile" data-sticky="true" >
+    
+<div class="header__left"><a class="ps-logo" [routerLink]="['/']" routerLinkActive="router-link-active" ><img src="assets/img/logo-res.png" alt=""></a></div>
+<div class="header__right">
+    <div class="header__actions">
+            <ng-container *ngIf>
+                <a class="header__user" [routerLink]="['/cuenta/perfil']"><i class="icon-user"></i></a>
+            </ng-container>
+            <ng-container *ngIf>
+                <a class="header__user" [routerLink]="['/login']"><i class="icon-user"></i></a>
+            </ng-container>
+            <ng-container *ngIf>
+                <a class="header__cart ps-toggle--sidebar">
+                    <i class="icon-cart"></i><span></span>
+                </a>
+            </ng-container>
+            <ng-container *ngIf>
+                <a class="header__cart ps-toggle--sidebar">
+                    <i class="icon-cart"></i><span></span>
+                </a>
+            </ng-container>
+        <a class="header__menu-toggle ps-toggle--sidebar" style="cursor: pointer;"><i class="icon-menu"></i></a>
+    </div>
+</div>
+</header>
+  
+  
+  
+  
+  <div class="ps-panel--sidebar" id="modalCarrito">
+      <div class="ps-panel__header">
+          <a class="ps-panel__close" style="cursor: pointer;"><i class="icon-cross"></i></a>
+      </div>
+      <div class="ps-panel__content">
+          <div class="ps-cart--mini">
+              <div class="ps-cart__content" *ngIf>
+                  <ng-container *ngIf>
+                      <div class="ps-cart__items">
+                          <div class="ps-product--mini-cart" *ngFor>
+                              <div class="ps-product__thumbnail">
+                                  <a [routerLink]="['/productos/']">
+                                      <img [src]=" +'obtener_portada/'" alt="">
+                                  </a>
+                              </div>
+                              <div class="ps-product__content">
+                                  <span class="ps-product__remove" style="cursor: pointer;"><i class="icon-cross"></i>
+                                  </span>
+                                  <a class="ps-product__title" [routerLink]="['/productos/']"></a>
+                                  <p> Cantidad: </p>
+                                  <p> Talla: </p>
+                                  <span class="ps-product__price">
+                                      <ng-container *ngIf>         
+                                        <span class=" mr-3"><b style="    color: #999ea9;"></b></span>
+                                        <span class="text-danger" *ngIf>
+                                          <del></del>
+                                        </span>
+                                      </ng-container>
+                                      <ng-container *ngIf>
+                                        
+                                        <span class=" mr-3"><b style="    color: #999ea9;"></b></span>
+                                        <span class="text-danger" *ngIf>
+                                          <del></del>
+                                        </span>
+                                      </ng-container>
+                                  </span>
+                              </div>
+                          </div>
+                         
+                      </div>
+                  </ng-container>
+                  <ng-container *ngIf>
+                      <form class="ps-form--404" action="404-page.html" method="get">
+                          <div class="ps-form__header">
+                              <img src="assets/img/carrito-de-compras.png" style="width: 220px !important; " alt="">
+                          </div>
+                          <h4 class="text-muted">¡Tu carrito esta vacio!</h4>
+
+                          <a [routerLink]="['/productos']" routerLinkActive="router-link-active"  style="text-decoration: underline;
+                          font-weight: 700;">Volver a la tienda"</a>
+                        </form>
+                  </ng-container>
+                  
+                  <div class="ps-cart__footer">
+                      <h3>Sub Total:<strong>
+                          <span *ngIf></span>
+                          <span *ngIf></span>
+                      </strong></h3>
+                        <figure  *ngIf>
+                            <a class="ps-btn ps-btn--outline"  [routerLink]="['/carrito']">Carrito</a>
+                            <a class="ps-btn ps-btn--black" *ngIf [routerLink]="['/checkout']">Checkout</a>
+                        </figure>
+                        <br> 
+                        <ng-container>
+                            <div>
+                                <h5 class="text-center"><b style="color: #127c5f;">Antes de realizar tu compra</b></h5>
+                            </div>
+                            <br>
+                            <p>
+                                <b style="color: #191919;">{{ 'menu.item_quince' </b> {{ 'menu.item_catorce'
+                            </p>
+                            <p>
+                                <b style="color: #191919;">{{ 'menu.item_dsiete'</b> {{ 'menu.item_dseis' 
+                            </p>
+                        </ng-container>
+                        
+                  </div>
+
+              </div>
+              <div class="ps-cart__content" *ngIf>
+                  <ng-container *ngIf>
+                      <div class="ps-cart__items">
+                          <div class="ps-product--mini-cart" *ngFor >
+                              <div class="ps-product__thumbnail">
+                                  <a [routerLink]="['/productos/']">
+                                      <img [src]>
+                                  </a>
+                              </div>
+                              <div class="ps-product__content"><span  style="cursor: pointer;" class="ps-product__remove"><i class="icon-cross"></i></span>
+                                  <a class="ps-product__title" [routerLink]="['/productos/']"></a>
+                                  <p> Cantidad:</p>
+                                  <p> Talla:</p>
+                                  <span class="ps-product__price">
+                                    <ng-container *ngIf>         
+                                        <span class=" mr-3"><b style="    color: #999ea9;"></b></span>
+                                        <span class="text-danger" *ngIf>
+                                          <del></del>
+                                        </span>
+                                      </ng-container>
+                                      <ng-container *ngIf>
+                                        
+                                        <span class=" mr-3"><b style="    color: #999ea9;"></b></span>
+                                        <span class="text-danger">
+                                          <del></del>
+                                        </span>
+                                      </ng-container>
+                                  </span>
+                              </div>
+                          </div>
+                         
+                      </div>
+                  </ng-container>
+                  <ng-container *ngIf>
+                      <form class="ps-form--404" action="404-page.html" method="get">
+                          <div class="ps-form__header">
+                              <img src="assets/img/carrito-de-compras.png" style="width: 220px !important; " alt="">
+                          </div>
+                          <h4 class="text-muted">¡Tu carrito esta vacio!</h4>
+                          <a [routerLink]="['/productos']" routerLinkActive="router-link-active"  style="text-decoration: underline;
+                          font-weight: 700;">Volver a la tienda"</a>
+                        </form>
+                  </ng-container>
+                  
+                  <div class="ps-cart__footer">
+                      <h3>Sub Total:<strong>
+                          <span *ngIf></span>
+                          <span *ngIf></span>
+                      </strong></h3>
+                    
+                      <figure *ngIf>
+                          <a class="ps-btn ps-btn--outline"  [routerLink]="['/carrito']">Carrito</a>
+                          <a class="ps-btn ps-btn--black" *ngIf [routerLink]="['/checkout']">Checkout</a>
+                        </figure>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <div class="ps-panel--sidebar" id="modalMenu">
+      <div class="ps-panel__header"><a class="ps-panel__close" style="cursor: pointer;"><i class="icon-cross"></i></a></div>
+      <div class="ps-panel__content">
+          <nav class="ps-navigation--mobile">
+              <div class="ps-navigation__language-currency">
+                  <div class="row">
+                      <div class="col-6">
+                          <ul class="ps-list">
+                              <li class="active"><a>Español</a></li>
+                          </ul>
+                      </div>
+                      <div class="col-6">
+                          <ul class="ps-list">
+                              <li *ngIf class="active"><a>USD</a></li>
+                              <li *ngIf class="active"><a>BOB</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="ps-navigation__menu">
+                  <ul class="menu--desktop">
+                      <li><a [routerLink]="['/']" ></a></li>
+                      <li><a [routerLink]="['/productos']" ></a></li>
+                      <li><a [routerLink]="['/nosotros']"></a></li>
+                      <li><a [routerLink]="['/ofertas']" ></a></li>
+                      <li><a [routerLink]="['/contacto']" ></a></li>
+  
+                      <li *ngIf><a  ></a></li>
+                  </ul>
+                  <ul class="menu--mobile">
+                      <li><a  [routerLink]="['/']" ></a></li>
+                      <li class="menu-item-has-children has-mega-menu"><a  [routerLink]="['/productos']" routerLinkActive="router-link-active" >Shop</a><span class="sub-toggle"></span>
+                          <div class="mega-menu">
+                              <div class="mega-menu__column">
+                                  <h4>Categorías<span class="sub-toggle"></span></h4>
+                                  <ul class="sub-menu--mega">
+                                 
+                                      <li *ngFor>
+                                          <a [routerLink]="['/productos/categoria/']"></a>
+                                      </li>
+                                  </ul>
+                              </div>
+                              
+                          </div>
+                      </li>
+                      <li><a [routerLink]="['/nosotros']" ></a></li>
+                      <li><a [routerLink]="['/embajadoras']"></a></li>
+                      <li><a [routerLink]="['/contacto']"></a></li>
+                  
+                      <li *ngIf><a ></a></li>
+                  </ul>
+              </div>
+              <figure class="ps-navigation__bottom">
+                  <figcaption></figcaption>
+                  <p>Ciudad, País contacto@domain.com <br> (+591) 65578478</p>
+              </figure>
+          </nav>
+      </div>
+  </div>

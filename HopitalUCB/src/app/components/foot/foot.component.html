@@ -1,0 +1,78 @@
+<!-- Footer -->
+<footer class="ps-footer--2 ps-footer--fullwidth">
+    <div class="container">
+        <div class="ps-footer__content">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+                    <aside class="widget widget_footer widget_align-right">
+                        <h3 class="widget-title">{{ 'footer.item_uno'</h3>
+                        <ul class="ps-list--line">
+                            <li><a  class="text-white" style="cursor: pointer;" [routerLink]="['/politicas-envio']" ></a></li>
+                            <li><a  class="text-white" style="cursor: pointer;" [routerLink]="['/terminos-condiciones']"></a></li>
+                            <li><a  class="text-white" style="cursor: pointer;" [routerLink]="['/contacto']"></a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+                    <aside class="widget widget_footer widget_align-right">
+                        <h3 class="widget-title"></h3>
+                        <ul class="ps-list--line">
+                            <li><a  class="text-white" style="cursor: pointer;" [routerLink]="['/nosotros']" ></a></li>
+                            <li><a class="text-white" [routerLink]="['/embajadoras']" ></a></li>
+                            <li><a class="text-white" [routerLink]="['/nosotros']"></a></li>
+                            <li><a class="text-white" [routerLink]="['/impacto-social']"></a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+                    <aside class="widget widget_footer widget_align-right">
+                        <h3 class="widget-title">{{ 'footer.item_siete'</h3>
+                        <ul class="ps-list--line">
+                            <li *ngFor>
+                              <a style="cursor: pointer;" class="text-white"></a>/a>
+                            </li>
+                     
+                        </ul>
+                    </aside>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+                    <aside class="widget widget_footer widget_align-right">
+                        <h3 class="widget-title">{{ 'footer.item_ocho'</h3>
+                        <select class="form-control" name="activeLang">
+                            <option value="es">Español</option>
+                            <option value="en">Ingles</option>
+                        </select>
+                    </aside>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+                    <aside class="widget widget_footer widget_align-right">
+                        <h3 class="widget-title">{{ 'footer.item_nueve' </h3>
+  
+                        <h5>
+                          <ng-container>
+                              USD
+                            </ng-container>
+                            <ng-container>
+                              PEN
+                            </ng-container>
+                        </h5>
+                       
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ps-footer__bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-4 col-md-6 col-sm-6 col-12 ">
+                    <p class="ps-footer__copyright">&copy; <strong class="text-white">NTienda</strong></p>
+                </div>
+                <div class="col-xl-6 col-lg-4 col-md-12 col-sm-12 col-12 ">
+                   <img src="assets/img/payment.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  
