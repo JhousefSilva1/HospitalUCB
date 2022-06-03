@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { FootComponent } from './components/foot/foot.component';
 import { NavComponent } from './components/nav/nav.component';
+import { ContactosComponent } from './components/contactos/contactos.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { NavComponent } from './components/nav/nav.component';
     HomeComponent,
      FootComponent,
      NavComponent,
+     ContactosComponent,
 
   ],
   imports: [
